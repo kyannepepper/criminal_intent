@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { useTheme } from "../components/ThemeContext";
 import ThemeOptionItem from "../components/ThemeOptionItem";
@@ -7,6 +8,7 @@ export default function Settings() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.bg }]}>
+      <StatusBar style={theme.text === "#1f1f1f" ? "dark" : "light"} animated />
       <Text style={[styles.title, { color: theme.text }]}>Choose Theme</Text>
       <FlatList
         data={themes}

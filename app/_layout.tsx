@@ -1,8 +1,10 @@
 import { Link, Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { Plus, Settings } from "lucide-react-native";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ThemeProvider, useTheme } from "../components/ThemeContext";
+
 
 function HeaderTitle({ color }: { color: string }) {
   return <Text style={[styles.headerTitle, { color }]}>Criminal Intent</Text>;
@@ -41,9 +43,9 @@ function RootStack() {
         headerStyle: { backgroundColor: theme.bold },
         headerTintColor: theme.text,
         headerTitle: "",
-        statusBarStyle: barStyle,
       }}
     >
+      <StatusBar style={theme.text === "#1f1f1f" ? "dark" : "light"} animated />
       <Stack.Screen
         name="index"
         options={{
